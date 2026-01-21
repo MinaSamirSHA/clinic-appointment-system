@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نظام حجز المواعيد للعيادات - Clinic Appointment System">
+    <title>نظام حجز المواعيد | Clinic Appointment System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langToggle" class="lang-btn" aria-label="Toggle Language">
+            <span class="lang-icon">🌐</span>
+            <span id="langText">EN</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="15" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text" data-i18n="appName">نظام حجز المواعيد</span>
+                </div>
+                <nav class="nav" id="mainNav">
+                    <a href="#home" class="nav-link active" data-i18n="navHome">الرئيسية</a>
+                    <a href="#features" class="nav-link" data-i18n="navFeatures">المميزات</a>
+                    <a href="#about" class="nav-link" data-i18n="navAbout">عن النظام</a>
+                    <button id="loginBtn" class="btn btn-outline" data-i18n="navLogin">تسجيل الدخول</button>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-i18n="heroTitle">نظام إدارة المواعيد للعيادات</h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">حل متكامل وبسيط لإدارة مواعيد العيادات الصغيرة في مصر</p>
+                    <div class="hero-buttons">
+                        <button id="registerClinicBtn" class="btn btn-primary btn-large" data-i18n="registerClinic">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 21V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V21M19 21H21M19 21H14M5 21H3M5 21H10M10 21V17C10 16.4477 10.4477 16 11 16H13C13.5523 16 14 16.4477 14 17V21M10 21H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            تسجيل عيادة
+                        </button>
+                        <button id="bookAppointmentBtn" class="btn btn-secondary btn-large" data-i18n="bookAppointment">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <div class="card-icon">📅</div>
+                            <div class="card-title" data-i18n="heroCardTitle">موعد اليوم</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="appointment-item">
+                                <div class="appointment-time">10:00 AM</div>
+                                <div class="appointment-patient" data-i18n="heroCardPatient">أحمد محمد</div>
+                            </div>
+                            <div class="appointment-item">
+                                <div class="appointment-time">11:30 AM</div>
+                                <div class="appointment-patient" data-i18n="heroCardPatient2">سارة علي</div>
+                            </div>
+                            <div class="appointment-item">
+                                <div class="appointment-time">02:00 PM</div>
+                                <div class="appointment-patient" data-i18n="heroCardPatient3">محمود حسن</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featuresTitle">لماذا تختار نظامنا؟</h2>
+            <p class="section-subtitle" data-i18n="featuresSubtitle">مميزات تجعل إدارة عيادتك أسهل وأكثر احترافية</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title" data-i18n="feature1Title">بدون تكاليف مبدئية</h3>
+                    <p class="feature-description" data-i18n="feature1Desc">ابدأ مجاناً بدون الحاجة لخادم أو اشتراكات مدفوعة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title" data-i18n="feature2Title">متوافق مع الجوال</h3>
+                    <p class="feature-description" data-i18n="feature2Desc">يعمل بكفاءة على جميع الأجهزة المحمولة والحواسيب</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3 class="feature-title" data-i18n="feature3Title">تنبيهات تلقائية</h3>
+                    <p class="feature-description" data-i18n="feature3Desc">إرسال تأكيدات عبر واتساب ورسائل SMS للمرضى</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title" data-i18n="feature4Title">متعدد المستخدمين</h3>
+                    <p class="feature-description" data-i18n="feature4Desc">صلاحيات مختلفة للطبيب والسكرتيرة والمدير</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title" data-i18n="feature5Title">تكامل مع Google Sheets</h3>
+                    <p class="feature-description" data-i18n="feature5Desc">حفظ البيانات اختيارياً في جداول Google</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title" data-i18n="feature6Title">قابل للتطوير</h3>
+                    <p class="feature-description" data-i18n="feature6Desc">جاهز للربط بقاعدة بيانات حقيقية لاحقاً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" data-i18n="aboutTitle">عن النظام</h2>
+                    <p class="about-description" data-i18n="aboutDesc1">
+                        نظام حجز المواعيد مصمم خصيصاً للعيادات الصغيرة في مصر. نحن نفهم التحديات التي تواجهها العيادات في إدارة المواعيد والتواصل مع المرضى.
+                    </p>
+                    <p class="about-description" data-i18n="aboutDesc2">
+                        يتيح لك النظام البدء فوراً بدون تكاليف، مع إمكانية التطوير والتوسع حسب احتياجاتك. سواء كنت تدير عيادة صغيرة أو مركز طبي، نظامنا يوفر لك الأدوات اللازمة لإدارة مواعيدك باحترافية.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label" data-i18n="statFree">مجاني للبدء</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label" data-i18n="statAvailable">متاح دائماً</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label" data-i18n="statScalable">قابل للتوسع</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <div class="about-card-content">
+                            <h3 data-i18n="aboutCardTitle">كيف يعمل النظام؟</h3>
+                            <ol class="steps-list">
+                                <li data-i18n="step1">سجل عيادتك في دقائق</li>
+                                <li data-i18n="step2">شارك رابط الحجز مع المرضى</li>
+                                <li data-i18n="step3">يحجز المريض موعده بسهولة</li>
+                                <li data-i18n="step4">يصل تأكيد تلقائي عبر واتساب</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title" data-i18n="footerAbout">عن النظام</h4>
+                    <p class="footer-text" data-i18n="footerAboutText">
+                        حل متكامل لإدارة مواعيد العيادات الصغيرة في مصر
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title" data-i18n="footerQuickLinks">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="navHome">الرئيسية</a></li>
+                        <li><a href="#features" data-i18n="navFeatures">المميزات</a></li>
+                        <li><a href="#about" data-i18n="navAbout">عن النظام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title" data-i18n="footerContact">تواصل معنا</h4>
+                    <p class="footer-text">
+                        <span data-i18n="footerEmail">البريد الإلكتروني:</span> info@clinicapp.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footerCopyright">© 2026 نظام حجز المواعيد. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modalContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/google-sheets.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/clinic-registration.js"></script>
+    <script src="js/patient-booking.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
