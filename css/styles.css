@@ -165,15 +165,18 @@ ol {
    Language Toggle
    =========================== */
 .language-toggle {
-    position: fixed;
-    top: var(--spacing-lg);
-    right: var(--spacing-lg);
-    z-index: 1000;
+    margin-right: var(--spacing-md);
 }
 
 html[dir="rtl"] .language-toggle {
-    right: auto;
-    left: var(--spacing-lg);
+    margin-right: 0;
+    margin-left: var(--spacing-md);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .lang-btn {
@@ -871,10 +874,37 @@ html[dir="rtl"] .modal-footer {
 
     .nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        gap: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+    }
+
+    .nav.mobile-active {
+        display: flex;
+    }
+
+    .nav #loginBtn {
+        width: 100%;
     }
 
     .mobile-menu-toggle {
         display: flex;
+    }
+
+    .language-toggle {
+        margin-right: 0;
+    }
+
+    html[dir="rtl"] .language-toggle {
+        margin-left: 0;
     }
 
     .hero-title {
