@@ -2,12 +2,12 @@
 const translations = {
     ar: {
         // Navigation
-        appName: 'نظام حجز المواعيد',
+        appName: 'مع هواش وان كليك',
         navHome: 'الرئيسية',
         navFeatures: 'المميزات',
         navAbout: 'عن النظام',
         navLogin: 'تسجيل الدخول',
-        
+
         // Hero Section
         heroTitle: 'نظام إدارة المواعيد للعيادات',
         heroSubtitle: 'حل متكامل وبسيط لإدارة مواعيد العيادات الصغيرة في مصر',
@@ -17,7 +17,7 @@ const translations = {
         heroCardPatient: 'أحمد محمد',
         heroCardPatient2: 'سارة علي',
         heroCardPatient3: 'محمود حسن',
-        
+
         // Features Section
         featuresTitle: 'لماذا تختار نظامنا؟',
         featuresSubtitle: 'مميزات تجعل إدارة عيادتك أسهل وأكثر احترافية',
@@ -33,7 +33,7 @@ const translations = {
         feature5Desc: 'حفظ البيانات اختيارياً في جداول Google',
         feature6Title: 'قابل للتطوير',
         feature6Desc: 'جاهز للربط بقاعدة بيانات حقيقية لاحقاً',
-        
+
         // About Section
         aboutTitle: 'عن النظام',
         aboutDesc1: 'نظام حجز المواعيد مصمم خصيصاً للعيادات الصغيرة في مصر. نحن نفهم التحديات التي تواجهها العيادات في إدارة المواعيد والتواصل مع المرضى.',
@@ -46,15 +46,15 @@ const translations = {
         step2: 'شارك رابط الحجز مع المرضى',
         step3: 'يحجز المريض موعده بسهولة',
         step4: 'يصل تأكيد تلقائي عبر واتساب',
-        
+
         // Footer
         footerAbout: 'عن النظام',
         footerAboutText: 'حل متكامل لإدارة مواعيد العيادات الصغيرة في مصر',
         footerQuickLinks: 'روابط سريعة',
         footerContact: 'تواصل معنا',
         footerEmail: 'البريد الإلكتروني:',
-        footerCopyright: '© 2026 نظام حجز المواعيد. جميع الحقوق محفوظة.',
-        
+        footerCopyright: '© 2026 هواش جروب. جميع الحقوق محفوظة.',
+
         // Clinic Registration
         clinicRegTitle: 'تسجيل عيادة جديدة',
         clinicRegSubtitle: 'املأ البيانات التالية لتسجيل عيادتك',
@@ -84,7 +84,7 @@ const translations = {
         registrationError: 'حدث خطأ أثناء التسجيل. حاول مرة أخرى.',
         passwordMismatch: 'كلمتا المرور غير متطابقتين',
         fillAllFields: 'يرجى ملء جميع الحقول المطلوبة',
-        
+
         // Patient Booking
         bookingTitle: 'حجز موعد',
         bookingSubtitle: 'اختر العيادة واحجز موعدك',
@@ -105,7 +105,7 @@ const translations = {
         noClinicSelected: 'يرجى اختيار عيادة',
         noClinicsAvailable: 'لا توجد عيادات متاحة حالياً',
         confirmationMessage: 'سيتم إرسال تأكيد عبر واتساب إلى رقمك',
-        
+
         // Dashboard
         dashboardTitle: 'لوحة التحكم',
         welcomeBack: 'مرحباً بعودتك',
@@ -131,7 +131,7 @@ const translations = {
         view: 'عرض',
         edit: 'تعديل',
         delete: 'حذف',
-        
+
         // Login
         loginTitle: 'تسجيل الدخول',
         loginSubtitle: 'ادخل إلى لوحة التحكم',
@@ -139,7 +139,7 @@ const translations = {
         loginError: 'بيانات الدخول غير صحيحة',
         noAccount: 'ليس لديك حساب؟',
         registerNow: 'سجل الآن',
-        
+
         // Common
         close: 'إغلاق',
         save: 'حفظ',
@@ -157,15 +157,15 @@ const translations = {
         required: 'مطلوب',
         optional: 'اختياري'
     },
-    
+
     en: {
         // Navigation
-        appName: 'Clinic Appointment System',
+        appName: 'With Hawash One Click',
         navHome: 'Home',
         navFeatures: 'Features',
         navAbout: 'About',
         navLogin: 'Login',
-        
+
         // Hero Section
         heroTitle: 'Clinic Appointment Management System',
         heroSubtitle: 'A complete and simple solution for managing appointments in small clinics in Egypt',
@@ -175,7 +175,7 @@ const translations = {
         heroCardPatient: 'Ahmed Mohamed',
         heroCardPatient2: 'Sara Ali',
         heroCardPatient3: 'Mahmoud Hassan',
-        
+
         // Features Section
         featuresTitle: 'Why Choose Our System?',
         featuresSubtitle: 'Features that make managing your clinic easier and more professional',
@@ -191,7 +191,7 @@ const translations = {
         feature5Desc: 'Optionally save data in Google Sheets',
         feature6Title: 'Scalable',
         feature6Desc: 'Ready to connect to a real database later',
-        
+
         // About Section
         aboutTitle: 'About the System',
         aboutDesc1: 'The appointment booking system is designed specifically for small clinics in Egypt. We understand the challenges clinics face in managing appointments and communicating with patients.',
@@ -204,15 +204,15 @@ const translations = {
         step2: 'Share the booking link with patients',
         step3: 'Patient books their appointment easily',
         step4: 'Automatic confirmation arrives via WhatsApp',
-        
+
         // Footer
         footerAbout: 'About the System',
         footerAboutText: 'A complete solution for managing appointments in small clinics in Egypt',
         footerQuickLinks: 'Quick Links',
         footerContact: 'Contact Us',
         footerEmail: 'Email:',
-        footerCopyright: '© 2026 Clinic Appointment System. All rights reserved.',
-        
+        footerCopyright: '© 2026 Hawash Group. All rights reserved.',
+
         // Clinic Registration
         clinicRegTitle: 'Register New Clinic',
         clinicRegSubtitle: 'Fill in the following information to register your clinic',
@@ -242,7 +242,7 @@ const translations = {
         registrationError: 'An error occurred during registration. Please try again.',
         passwordMismatch: 'Passwords do not match',
         fillAllFields: 'Please fill in all required fields',
-        
+
         // Patient Booking
         bookingTitle: 'Book Appointment',
         bookingSubtitle: 'Select clinic and book your appointment',
@@ -263,7 +263,7 @@ const translations = {
         noClinicSelected: 'Please select a clinic',
         noClinicsAvailable: 'No clinics available at the moment',
         confirmationMessage: 'A confirmation will be sent via WhatsApp to your number',
-        
+
         // Dashboard
         dashboardTitle: 'Dashboard',
         welcomeBack: 'Welcome Back',
@@ -289,7 +289,7 @@ const translations = {
         view: 'View',
         edit: 'Edit',
         delete: 'Delete',
-        
+
         // Login
         loginTitle: 'Login',
         loginSubtitle: 'Access your dashboard',
@@ -297,7 +297,7 @@ const translations = {
         loginError: 'Invalid credentials',
         noAccount: "Don't have an account?",
         registerNow: 'Register Now',
-        
+
         // Common
         close: 'Close',
         save: 'Save',
@@ -334,7 +334,7 @@ function setLanguage(lang) {
 function updatePageContent() {
     const lang = getCurrentLanguage();
     const elements = document.querySelectorAll('[data-i18n]');
-    
+
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
