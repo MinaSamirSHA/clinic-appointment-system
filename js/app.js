@@ -372,22 +372,24 @@ class ClinicApp {
     initLoginForm() {
         const form = document.getElementById('loginForm');
         if (form) {
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
                 const email = document.getElementById('loginEmail').value;
                 const password = document.getElementById('loginPassword').value;
 
-                const user = StorageManager.authenticateUser(email, password);
+                try {
+                    const response = await apiClient.login(email, password);
 
-                if (user) {
-                    this.currentUser = user;
-                    this.updateUIForLoggedInUser();
-                    document.querySelector('.modal-overlay').remove();
-                    this.showNotification(t('success'), 'success');
-                    this.showDashboard();
-                } else {
-                    this.showNotification(t('loginError'), 'error');
+                    if (response.success) {
+                        this.currentUser = response.data.user;
+                        this.updateUIForLoggedInUser();
+                        document.querySelector('.modal-overlay').remove();
+                        this.showNotification(t('success'), 'success');
+                        this.showDashboard();
+                    }
+                } catch (error) {
+                    this.showNotification(error.message || t('loginError'), 'error');
                 }
             });
         }

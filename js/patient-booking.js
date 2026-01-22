@@ -47,38 +47,32 @@ function initPatientBooking() {
         }
 
         try {
-            // Save appointment
-            const appointment = StorageManager.saveAppointment(clinicId, formData);
+            // Create appointment via API
+            const response = await apiClient.createAppointment({
+                clinicId: parseInt(clinicId),
+                ...formData
+            });
 
-            // Get clinic info for Google Sheets
-            const clinic = StorageManager.getClinicById(clinicId);
+            if (response.success) {
+                // Show success message
+                app.showNotification(t('bookingSuccess'), 'success');
 
-            // Optionally send to Google Sheets
-            if (clinic && clinic.googleSheetsUrl) {
-                await sendToGoogleSheets(clinic.googleSheetsUrl, {
-                    type: 'appointment',
-                    data: {
-                        clinicName: clinic.name,
-                        ...formData,
-                        bookedAt: new Date().toISOString()
-                    }
-                });
+                // Get clinic info for confirmation
+                const clinicResponse = await apiClient.getClinicById(clinicId);
+                const clinic = clinicResponse.data;
+
+                // Show confirmation details
+                showBookingConfirmation(response.data, clinic);
+
+                // Close modal after delay
+                setTimeout(() => {
+                    document.querySelector('.modal-overlay')?.remove();
+                }, 5000);
             }
-
-            // Show success message
-            app.showNotification(t('bookingSuccess'), 'success');
-
-            // Show confirmation details
-            showBookingConfirmation(appointment, clinic);
-
-            // Close modal after delay
-            setTimeout(() => {
-                document.querySelector('.modal-overlay')?.remove();
-            }, 5000);
 
         } catch (error) {
             console.error('Booking error:', error);
-            app.showNotification(t('bookingError'), 'error');
+            app.showNotification(error.message || t('bookingError'), 'error');
         }
     });
 }

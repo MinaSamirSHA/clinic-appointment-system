@@ -30,39 +30,26 @@ function initClinicRegistration() {
         delete formData.confirmPassword;
 
         try {
-            // Save to LocalStorage
-            const clinic = StorageManager.saveClinic(formData);
+            // Call API to register clinic
+            const response = await apiClient.register(formData);
 
-            // Optionally send to Google Sheets
-            if (formData.googleSheetsUrl) {
-                await sendToGoogleSheets(formData.googleSheetsUrl, {
-                    type: 'clinic_registration',
-                    data: {
-                        ...formData,
-                        password: undefined, // Don't send password to sheets
-                        registeredAt: new Date().toISOString()
-                    }
-                });
-            }
+            if (response.success) {
+                // Show success message
+                app.showNotification(t('registrationSuccess'), 'success');
 
-            // Show success message
-            app.showNotification(t('registrationSuccess'), 'success');
+                // Close modal
+                setTimeout(() => {
+                    document.querySelector('.modal-overlay')?.remove();
 
-            // Close modal
-            setTimeout(() => {
-                document.querySelector('.modal-overlay')?.remove();
-
-                // Auto-login the user
-                const user = StorageManager.authenticateUser(formData.email, formData.password);
-                if (user) {
-                    app.currentUser = user;
+                    // Set current user
+                    app.currentUser = response.data.user;
                     app.updateUIForLoggedInUser();
-                }
-            }, 1500);
+                }, 1500);
+            }
 
         } catch (error) {
             console.error('Registration error:', error);
-            app.showNotification(t('registrationError'), 'error');
+            app.showNotification(error.message || t('registrationError'), 'error');
         }
     });
 }
